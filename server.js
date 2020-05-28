@@ -26,19 +26,20 @@ app.use((req, res, next) => {
 });
 
 var palabras = config.palabras;
-var msj_dafault = config.msj_default;
+var msj_default = config.msj_default;
 var menu_opciones = config.menu_opciones;
 var mjs_horario = config.mjs_horario;
 var contenedor = config.contenedor;
 
+var pais = config.pais;
+var nomApp = config.nomApp;
+
 app.post('/message', (req, res) => {
   config.obtener_fecha();
 
-  console.log("[Brito] :: [message] :: [Peticion POST] :: [FECHA-HORA] :: "+config.fecha_actual+" "+config.hora_actual);
+  console.log("[Brito] :: [message] :: [Peticion POST]");
 
   var horarios = horario.validarHorario(config.OPEN_HOUR, config.OPEN_MINUTE, config.CLOSE_HOUR, config.CLOSE_MINUTE);
-
-  console.log(horarios);
   
   var result, resultado;
   var bandera = false , estatus = 200 , menu_dos = 0;
@@ -54,6 +55,12 @@ app.post('/message', (req, res) => {
   var cadena = req.body.message;
   var bandera_asesor = false;
 
+  var bandera_tranferido = false;
+  var bandera_fueraHorario = false;
+  var nom_grupoACD = "";
+  var opcion = "";
+  var bandera_opt = true;
+
   if(apiVersion !== '' && typeof apiVersion !== "undefined")
   {
     if(authToken !== '' && typeof authToken !== "undefined")
@@ -66,7 +73,51 @@ app.post('/message', (req, res) => {
           {
             if(cadena !== '' && typeof cadena !== "undefined")
             {
-              result = msj_dafault;
+              opcion = "Default_NI";
+
+              if(horarios)
+              {
+                console.log("[Brito] :: [Cumple horario habil] :: [horarios] :: " + horarios); 
+                result = msj_default;
+                nom_grupoACD = obtener_ACD(channel);
+                bandera_tranferido = true;
+              }
+              else
+              {
+                console.log("[Brito] :: [No cumple horario habil] :: [horarios] :: " + horarios);                    
+                contenedor.type = "text";
+                contenedor.accion = "end";
+                contenedor.queue = "";
+                contenedor.mensaje = mjs_horario;
+                result = contenedor;
+                bandera_fueraHorario = true;
+              }
+
+              var options = {
+                'method': 'POST',
+                'url': 'https://estadisticasmenubot.mybluemix.net/opcion/insert',
+                'headers': {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(
+                {
+                  "conversacion_id": conversationID,
+                  "pais": pais,
+                  "app": nomApp,
+                  "opcion": opcion,
+                  "transferencia": bandera_tranferido,
+                  "fueraHorario": bandera_fueraHorario,
+                  "grupoACD": nom_grupoACD
+                })
+              };
+
+              console.log(options);
+              request(options, function (error, response)
+              { 
+                if (error) throw new Error(error);
+                console.log(response.body);
+              });
+              
 
               estatus = 200;
 
@@ -78,7 +129,7 @@ app.post('/message', (req, res) => {
                 },
                 "action":{
                   "type": result.accion,
-                  "queue": result.queue
+                  "queue": nom_grupoACD
                 },
                 "messages":[
                   {
@@ -142,7 +193,23 @@ app.post('/message', (req, res) => {
   }
 
   res.status(estatus).json(resultado);
-})
+});
+
+function obtener_ACD(rs)
+{
+  switch (rs)
+  {
+    case "messenger":
+      return config.cola_opc1_FB; // NI_FB_MSS_SAC      
+    break;
+    case "twitterDM":      
+      return config.cola_opc1_TW; // NI_TW_DM_SAC      
+    break;
+    default:
+      return config.cola_opc1_FB;
+    break;
+  }
+}
 
 app.get('/', (req, res) => {
   var d = new Date();
@@ -150,7 +217,7 @@ app.get('/', (req, res) => {
   var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
   var nd = new Date(utc + (3600000*offset));
 
-  var respuesta = "Bienvenido al menú Bot de <strong>Panamá</strong>, las opciones disponibles son:   <strong>/message</strong> <br> ";
+  var respuesta = "Bienvenido al menú Bot de <strong>Nicaragua</strong>, las opciones disponibles son:   <strong>/message</strong> <br> ";
   respuesta += " <strong>Sixbell</strong> "+ nd.getFullYear() +" - Versión: 1.0.0 <br>";
   res.status(200).send(respuesta);
 })

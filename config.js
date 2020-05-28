@@ -1,7 +1,9 @@
+var pais = "NI", nomApp = "MenuBot_NI";
+
 var OPEN_HOUR = 7;
 var OPEN_MINUTE = 0;
 
-var CLOSE_HOUR = 20;
+var CLOSE_HOUR = 22;
 var CLOSE_MINUTE = 0;
 
 var offset = -6;
@@ -16,9 +18,12 @@ var dias = {
     "6" : ["sabado",true]
 };
 
-var mjs_horario = "Nuestro horario de atención es de 7:00 am a 8:00 pm";
+var mjs_horario = "Hola, gracias por su mensaje. En este momento no estamos disponible, nuestro horario de atención es de Lunes a Domingo de 7am a 10pm. $cr $cr";
+    mjs_horario += "Para su comodidad ahora puede utilizar nuestros menú digital de autogestión ingresando al link: https://bit.ly/3aaWUlF";
 
 var cola_opc1 = "WhatsappTest";
+var cola_opc1_FB = "NI_FB_MSS_SAC";
+var cola_opc1_TW = "NI_TW_DM_SAC";
 
 var palabras = {  
   "recarga": {
@@ -65,19 +70,14 @@ var palabras = {
   }
 };
 
-var mensaje_df = "Bienvenido a Claro, te invitamos a registrarte en https://miclaro.com.pa/wps/portal/pan/ dónde podrás realizar de inmediato las siguientes autogestiones: $cr $cr ";
- mensaje_df +="Pagos de factura $cr ";
- mensaje_df +="Consulta de saldo $cr ";
- mensaje_df +="Recargas y paquetes prepagos $cr ";
- mensaje_df +="Horarios y ubicación de nuestras tiendas $cr ";
- mensaje_df +="Promociones Vigentes $cr ";
- mensaje_df +="Atención en Canales Digitales $cr $cr ";
- mensaje_df +="En un momento serás atendido por uno de nuestros asesores 🤓 💻";
+var mensaje_df = "¡Bienvenido a CLARO Nicaragua! Estamos para servirle! $cr ";
+ mensaje_df +="En un momento les estará atendiendo uno de nuestros ejecutivos.";
+ 
 
 var msj_default = {
   "type": "text",
   "accion": "transfer",
-  "queue" : cola_opc1,
+  "queue" : "",
   "mensaje" : mensaje_df,
   "mediaURL" : ""
 }
@@ -132,3 +132,12 @@ exports.dias = dias;
 exports.mjs_horario = mjs_horario;
 
 exports.contenedor = contenedor;
+
+/***************************************************/
+
+exports.pais = pais;
+
+exports.nomApp = nomApp;
+
+exports.cola_opc1_FB = cola_opc1_FB;
+exports.cola_opc1_TW = cola_opc1_TW;
