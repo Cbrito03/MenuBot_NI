@@ -16,8 +16,14 @@ var mensaje_df = "¡Hola! $cr Soy *Avi*, tu asistente virtual 🤖 de Claro $cr 
     mensaje_df +="➡️ Envía *club* para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰  $cr $cr ";
     //mensaje_df +="➡️ Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr $cr ";
 
-var mjs_horario = "Hola, gracias por su mensaje. En este momento no estamos disponible, nuestro horario de atención es de Lunes a Domingo de 7am a 10pm. $cr $cr";
-    mjs_horario += 'Para su comodidad ahora puede utilizar nuestros menú digital de autogestión ingresando al link: https://bit.ly/3aaWUlF';
+var mjs_horario = "¡Hola, gracias por comunicarte a Claro, te informamos nuestros horarios de atención! $cr $cr $cr ";
+    mjs_horario += "Whatsapp $cr $cr ";
+    mjs_horario += "Lunes a Domingo 8:00 a 21:00 horas $cr $cr $cr ";
+    mjs_horario += "⌚Facebook y Twitter $cr $cr ";
+    mjs_horario += "Lunes a Domingo $cr $cr ";
+    mjs_horario += "7:00 a 22:00 horas $cr $cr ";
+    mjs_horario += "Te invitamos a ingresar a https://miclaro.com.ni/ disponible 24/7 para que puedas hacer tus autogestiones. $cr $cr ";
+    mjs_horario += "¡Claro que sí! ";
 
 var msj_facturar = "Puedes descargar tu factura móvil ingresando al siguiente portal: https://bit.ly/FacturaClaroNI $cr $cr ";
     msj_facturar += "Puedes pagar fácil y rápido aquí: ni.mipagoclaro.com 💳🧾 $cr $cr ";

@@ -4,9 +4,15 @@ var colas = {
   "opcion_3" : "NI_Wa_Corpo"
 };
 
-var mjs_horario = "Hola, gracias por su mensaje. En este momento no estamos disponible, nuestro horario de atención es de Lunes a Domingo de 7am a 10pm. $cr $cr";
-    mjs_horario += "Para su comodidad ahora puede utilizar nuestros menú digital de autogestión ingresando al link: https://bit.ly/3aaWUlF";
-
+var mjs_horario = "¡Hola, gracias por comunicarte a Claro, te informamos nuestros horarios de atención! $cr $cr $cr ";
+    mjs_horario += "Whatsapp $cr $cr ";
+    mjs_horario += "Lunes a Domingo 8:00 a 21:00 horas $cr $cr $cr ";
+    mjs_horario += "⌚Facebook y Twitter $cr $cr ";
+    mjs_horario += "Lunes a Domingo $cr $cr ";
+    mjs_horario += "7:00 a 22:00 horas $cr $cr ";
+    mjs_horario += "Te invitamos a ingresar a https://miclaro.com.ni/ disponible 24/7 para que puedas hacer tus autogestiones. $cr $cr ";
+    mjs_horario += "¡Claro que sí! ";
+    
 var mensaje_df = "¡Bienvenido a Claro Nicaragua! Estamos para servirle! $cr $cr ";
     mensaje_df +="Elija la opción que necesita para ser atendido por uno de nuestros ejecutivos. $cr $cr ";
     mensaje_df +="1- Servicio al Cliente $cr ";
