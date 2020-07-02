@@ -87,7 +87,7 @@ var palabras = {
     "messages" : [
       {
         "type" : "text",
-        "text" :  "Para conocer el saldo, fecha de vencimiento y también poder pagar tu factura móvil y residencial, puedes ingresar al siguiente portal: ni.mipagoclaro.com 💳🧾",
+        "text" :  "Para conocer el saldo, fecha de vencimiento y también poder pagar tu factura móvil y residencial, puedes ingresar al siguiente portal: https://ni.mipagoclaro.com/ 💳🧾",
         "mediaURL" : ""
       }
     ]
