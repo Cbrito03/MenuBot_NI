@@ -139,6 +139,21 @@ var palabras = {
   }
 };
 
+var msj_no_opcion = 
+{
+  "action" : {
+    "type" : "continue",
+    "queue" : ""
+  },
+  "messages" : [
+    {
+      "type" : "text",
+      "text" : "➡️ Envía *asistencia* si presentas inconvenientes con tu internet de celular, llamadas o mensajes de texto📱. $cr $cr ",
+      "mediaURL" : ""
+    }
+  ]
+};
+
 var contenedor = {
   "action" : {
     "type" : "",
@@ -200,6 +215,8 @@ exports.mjs_horario = mjs_horario;
 exports.msj_fuera_horario = msj_fuera_horario;
 
 exports.msj_factura_asesor = msj_factura_asesor;
+
+exports.msj_no_opcion = msj_no_opcion;
 
 exports.contenedor = contenedor;
 

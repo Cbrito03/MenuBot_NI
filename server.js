@@ -221,11 +221,11 @@ app.post('/wa/message', (req, res) => {
 								if(bandera_opt)
 								{
 									console.log(options);
-									/*request(options, function (error, response)
+									request(options, function (error, response)
 									{ 
 										if (error) throw new Error(error);
 										console.log(response.body);
-									});*/
+									});
 								}								
 							}
 							//else{result = msj_dafault; localStorage.removeItem("msj_"+conversationID);}
@@ -351,6 +351,7 @@ app.post('/tw/message', (req, res) => {
 
 									if(atr.toLowerCase() === cadena[i])
 									{
+										localStorage.removeItem("msj_"+conversationID);
 										opcion = cadena[i];
 										//msj_buscar = cadena[i];
 										if(msj_tw.palabras[atr].action.queue === "" && msj_tw.palabras[atr].action.type !== "transfer")
@@ -379,26 +380,24 @@ app.post('/tw/message', (req, res) => {
 										bandera = true;
 										bandera_opt = true;
 										break;
-									}
+									}				
 								}      
 								if(bandera){ break; }
 							}
 
 							console.log("[Brito] :: [message] :: [msj_buscar_opcion] :: " + msj_buscar_opcion);
 
-							if(localStorage.getItem("msj_"+conversationID) == null) // No existe
-							{
-								console.log('Crea Storage :: ' + localStorage.getItem("msj_"+conversationID));
+							if(localStorage.getItem("msj_"+conversationID) == null) // No existe localStorage
+							{								
 
 								if( msj_buscar_opcion == "factura")
-								{
+								{									
 									console.log("[Brito] :: [message] :: [Se crea LocalStrogae para factura] :: " + msj_buscar_opcion);
 									localStorage.setItem("msj_"+conversationID, msj_buscar_opcion);
-									console.log('[Brito] :: [message] ::', localStorage.getItem("msj_"+conversationID));
+									console.log('Crea Storage :: ' + localStorage.getItem("msj_"+conversationID));
 								}
 								else if(!bandera)
 								{
-
 				                	console.log('[Azul] :: if ::' + bandera);
 									result_messages = msj_tw.msj_default.messages;
 									result_action = msj_tw.msj_default.action;
@@ -434,11 +433,9 @@ app.post('/tw/message', (req, res) => {
 
 									bandera = true;
 									bandera_opt = true;										
-								}
+								}								
 								else
 				                {
-				                	localStorage.removeItem("msj_"+conversationID);
-
 				                	if(!bandera)
 				                	{
 				                		result_messages = msj_tw.msj_default.messages;
@@ -447,7 +444,7 @@ app.post('/tw/message', (req, res) => {
 				                }
 							}
 
-							console.log('[Azul] :: ' + bandera);
+							console.log('[Azul] :: [bandera]' + bandera);
 
 							var options = {
 								'method': 'POST',
@@ -472,19 +469,33 @@ app.post('/tw/message', (req, res) => {
 								if(bandera_opt)
 								{
 									console.log(options);
-									/*request(options, function (error, response)
+									request(options, function (error, response)
 									{ 
 										if (error) throw new Error(error);
 										console.log(response.body);
-									});*/
+									});
 								}
 								
 							}
 							else
 							{
-								result_messages = msj_tw.msj_default.messages;
-								result_action = msj_tw.msj_default.action;
-								localStorage.removeItem("msj_"+conversationID);
+								console.log("[Brito] :: [bandera] :: ", bandera);  
+								if(localStorage.getItem("msj_"+conversationID) !== "NOK")
+								{
+									console.log("[Brito] :: [bandera] :: ",bandera, " :: [IF] :: ",localStorage.getItem("msj_"+conversationID) );
+									localStorage.removeItem("msj_"+conversationID);
+				                	localStorage.setItem("msj_"+conversationID, "NOK");
+				                	result_messages = msj_tw.msj_default.messages;
+									result_action = msj_tw.msj_default.action;
+									console.log("[Brito] :: [bandera] :: ",bandera, " :: [IF] :: [Se crea local para msj alterno]:: ",localStorage.getItem("msj_"+conversationID) );
+								}
+								else if(localStorage.getItem("msj_"+conversationID) === "NOK")
+								{
+									console.log("[Brito] :: [bandera] :: ",bandera, " :: [ELSE] :: ",localStorage.getItem("msj_"+conversationID) );
+									result_messages = msj_tw.msj_no_opcion.messages;
+									result_action = msj_tw.msj_no_opcion.action;
+								}							
+								//localStorage.removeItem("msj_"+conversationID);
 							}
 
               				console.log("[Brito] :: [channel] :: ", channel, " :: [opcion] :: ", opcion);              				
@@ -607,6 +618,7 @@ app.post('/fb/message', (req, res) => {
 
 									if(atr.toLowerCase() === cadena[i])
 									{
+										localStorage.removeItem("msj_"+conversationID);
 										opcion = cadena[i];
 										//msj_buscar = cadena[i];
 										if(msj_fb.palabras[atr].action.queue === "" && msj_fb.palabras[atr].action.type !== "transfer")
@@ -693,7 +705,7 @@ app.post('/fb/message', (req, res) => {
 								}
 								else
 				                {
-				                	localStorage.removeItem("msj_"+conversationID);
+				                	//localStorage.removeItem("msj_"+conversationID);
 
 				                	if(!bandera)
 				                	{
@@ -728,19 +740,33 @@ app.post('/fb/message', (req, res) => {
 								if(bandera_opt)
 								{
 									console.log(options);
-									/*request(options, function (error, response)
+									request(options, function (error, response)
 									{ 
 										if (error) throw new Error(error);
 										console.log(response.body);
-									});*/
+									});
 								}
 								
 							}
 							else
 							{
-								result_messages = msj_fb.msj_default.messages;
-								result_action = msj_fb.msj_default.action;
-								localStorage.removeItem("msj_"+conversationID);
+								console.log("[Brito] :: [bandera] :: ", bandera);  
+								if(localStorage.getItem("msj_"+conversationID) !== "NOK")
+								{
+									console.log("[Brito] :: [bandera] :: ",bandera, " :: [IF] :: ",localStorage.getItem("msj_"+conversationID) );
+									localStorage.removeItem("msj_"+conversationID);
+				                	localStorage.setItem("msj_"+conversationID, "NOK");
+				                	result_messages = msj_tw.msj_default.messages;
+									result_action = msj_tw.msj_default.action;
+									console.log("[Brito] :: [bandera] :: ",bandera, " :: [IF] :: [Se crea local para msj alterno]:: ",localStorage.getItem("msj_"+conversationID) );
+								}
+								else if(localStorage.getItem("msj_"+conversationID) === "NOK")
+								{
+									console.log("[Brito] :: [bandera] :: ",bandera, " :: [ELSE] :: ",localStorage.getItem("msj_"+conversationID) );
+									result_messages = msj_tw.msj_no_opcion.messages;
+									result_action = msj_tw.msj_no_opcion.action;
+								}							
+								//localStorage.removeItem("msj_"+conversationID);
 							}
 
               				console.log("[Brito] :: [channel] :: ", channel, " :: [opcion] :: ", opcion);              				
