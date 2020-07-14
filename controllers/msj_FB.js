@@ -6,10 +6,11 @@ var colas = {
 
 var mensaje_df = "¡Hola! $cr Soy *Avi*, tu asistente virtual 🤖 de Claro $cr ";
     mensaje_df +="¡Este es el nuevo menú de opciones con las que te puedo apoyar más rápido!  Solo envía una de las palabras que aparecen resaltadas según tu consulta. $cr $cr "
+    mensaje_df +="➡️ Envía *asistencia* si presentas inconvenientes con tu servicios móvil 📱, línea , Internet residencial o televisión claro  🖥. $cr $cr ";
     mensaje_df +="➡️ Envía *cotizar* para conocer nuestros planes móviles y residenciales si deseas renovar o contratar nuevos servicios. 😎  😎 $cr $cr ";
     mensaje_df +="➡️ Envía *factura* para conocer el detalle de tu factura, monto y fecha de vencimiento.  📥 $cr $cr ";
     mensaje_df +="➡️ Envía *ayuda* para conocer todo lo que puedes hacer en un mismo lugar. ¡Puedes consultar tu saldo, tus paquetes contratados, tu consumo de internet móvil y mucho más!  😎 $cr $cr ";
-    mensaje_df +="➡️ Envía *asistencia* si presentas inconvenientes con tu internet de celular, llamadas o mensajes de texto📱. $cr $cr ";
+    //mensaje_df +="➡️ Envía *asistencia* si presentas inconvenientes con tu internet de celular, llamadas o mensajes de texto📱. $cr $cr ";
     mensaje_df +="➡️ Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr $cr ";
     mensaje_df +="➡️ Envía *recarga* para hacer una recarga.  $cr $cr ";
     mensaje_df +="➡️ Envía *paquete* para compra de paquete. $cr $cr ";

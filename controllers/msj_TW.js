@@ -6,10 +6,10 @@ var colas = {
 
 var mensaje_df = "¡Hola! $cr Soy *Avi*, tu asistente virtual 🤖 de Claro $cr ";
     mensaje_df +="¡Este es el nuevo menú de opciones con las que te puedo apoyar más rápido!  Solo envía una de las palabras que aparecen resaltadas según tu consulta. $cr $cr "
+    mensaje_df +="➡️ Envía *asistencia* si presentas inconvenientes con tu servicios móvil 📱, línea , Internet residencial o televisión claro  🖥. $cr $cr ";
     mensaje_df +="➡️ Envía *cotizar* para conocer nuestros planes móviles y residenciales si deseas renovar o contratar nuevos servicios. 😎  😎 $cr $cr ";
     mensaje_df +="➡️ Envía *factura* para conocer el detalle de tu factura, monto y fecha de vencimiento.  📥 $cr $cr ";
     mensaje_df +="➡️ Envía *ayuda* para conocer todo lo que puedes hacer en un mismo lugar. ¡Puedes consultar tu saldo, tus paquetes contratados, tu consumo de internet móvil y mucho más!  😎 $cr $cr ";
-    mensaje_df +="➡️ Envía *asistencia* si presentas inconvenientes con tu internet de celular, llamadas o mensajes de texto📱. $cr $cr ";
     mensaje_df +="➡️ Envía *pagar* para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 $cr $cr ";
     mensaje_df +="➡️ Envía *recarga* para hacer una recarga.  $cr $cr ";
     mensaje_df +="➡️ Envía *paquete* para compra de paquete. $cr $cr ";
@@ -39,104 +39,104 @@ var msj_club = "Si eres Claro 😉 eres parte del club con beneficios y descuent
     msj_club += "iOS: http://bit.ly/ClaroClubiOS $cr $cr ";
 
 var palabras = {
-  "cotizar": {
-    "action" : {
-      "type" : "transfer",
-      "queue" : colas.cotizar
-    },
-    "messages" : [
-      {
-        "type" : "text",
-        "text" :  "*¡Hola!🤗 Bienvenido a nuestro servicio de ventas Claro.*  En un momento uno de nuestros representantes te atenderá",
-        "mediaURL" : ""
-      }
-    ]
-  },
-  "factura": {
-    "action" : {
-      "type" : "continue",
-      "queue" : ""
-    },
-    "messages" : [
-      {
-        "type" : "text",
-        "text" :  msj_facturar,
-        "mediaURL" : ""
-      }
-    ]
-  },
-  "ayuda": {
-    "action" : {
-      "type" : "continue",
-      "queue" : ""
-    },
-    "messages" : [
-      {
-        "type" : "text",
-        "text" :  msj_ayuda,
-        "mediaURL" : ""
-      }
-    ]
-  },
-  "asistencia": {
-   "action" : {
-      "type" : "transfer",
-      "queue" : colas.asistencia
-    },
-    "messages" : []
-  },
-  "pagar": {
-    "action" : {
-      "type" : "continue",
-      "queue" : ""
-    },
-    "messages" : [
-      {
-        "type" : "text",
-        "text" :  "Para conocer el saldo, fecha de vencimiento y también poder pagar tu factura móvil y residencial, puedes ingresar al siguiente portal: https://ni.mipagoclaro.com/ 💳🧾",
-        "mediaURL" : ""
-      }
-    ]
-  },
-  "recarga": {
-    "action" : {
-      "type" : "continue",
-      "queue" : ""
-    },
-    "messages" : [
-      {
-        "type" : "text",
-        "text" :  "Recarga fácil y rápido visitando nuestro portal: https://paquetes.miclaro.com.ni/ 😎",
-        "mediaURL" : ""
-      }
-    ]
-  },
-  "Paquete": {
-    "action" : {
-      "type" : "continue",
-      "queue" : ""
-    },
-    "messages" : [
-      {
-        "type" : "text",
-        "text" :  "Compra el paquete que prefieras ingresando a https://paquetes.miclaro.com.ni",
-        "mediaURL" : ""
-      }
-    ]
-  },
-  "club": {
-    "action" : {
-      "type" : "continue",
-      "queue" : ""
-    },
-    "messages" : [
-      {
-        "type" : "text",
-        "text" :  msj_club,
-        "mediaURL" : ""
-      }
-    ]
-  }
+	"cotizar": {
+		"action" : {
+			"type" : "transfer",
+			"queue" : colas.cotizar
+		},
+		"messages" : [
+			{
+				"type" : "text",
+				"text" :  "*¡Hola!🤗 Bienvenido a nuestro servicio de ventas Claro.*  En un momento uno de nuestros representantes te atenderá",
+				"mediaURL" : ""
+			}
+		]
+	},
+	"factura": {
+		"action" : {
+			"type" : "continue",
+			"queue" : ""
+		},
+		"messages" : [
+			{
+				"type" : "text",
+				"text" :  msj_facturar,
+				"mediaURL" : ""
+			}
+		]
+	},
+	"ayuda": {
+		"action" : {
+			"type" : "continue",
+			"queue" : ""
+		},
+		"messages" : [
+			{
+				"type" : "text",
+				"text" :  msj_ayuda,
+				"mediaURL" : ""
+			}
+		]
+	},
+	"asistencia": {
+		"action" : {
+			"type" : "transfer",
+			"queue" : colas.asistencia
+		},
+		"messages" : []
+	},
+	"pagar": {
+		"action" : {
+			"type" : "continue",
+			"queue" : ""
+		},
+		"messages" : [
+			{
+				"type" : "text",
+				"text" :  "Para conocer el saldo, fecha de vencimiento y también poder pagar tu factura móvil y residencial, puedes ingresar al siguiente portal: https://ni.mipagoclaro.com/ 💳🧾",
+				"mediaURL" : ""
+			}
+		]
+	},
+	"recarga": {
+		"action" : {
+			"type" : "continue",
+			"queue" : ""
+		},
+		"messages" : [
+			{
+				"type" : "text",
+				"text" :  "Recarga fácil y rápido visitando nuestro portal: https://paquetes.miclaro.com.ni/ 😎",
+				"mediaURL" : ""
+			}
+		]
+	},
+	"Paquete": {
+		"action" : {
+			"type" : "continue",
+			"queue" : ""
+		},
+		"messages" : [
+			{
+				"type" : "text",
+				"text" :  "Compra el paquete que prefieras ingresando a https://paquetes.miclaro.com.ni",
+				"mediaURL" : ""
+			}
+		]
+	},
+	"club": {
+		"action" : {
+			"type" : "continue",
+			"queue" : ""
+		},
+		"messages" : [
+			{
+				"type" : "text",
+				"text" :  msj_club,
+				"mediaURL" : ""
+			}
+		]
+	}
 };
 
 var msj_no_opcion = 
