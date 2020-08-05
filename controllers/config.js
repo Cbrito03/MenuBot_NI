@@ -2,7 +2,7 @@ var info =
 {
   "pais" : "NI",
   "nomApp" : "MenuBot_NI",
-  "version" : "2.1.0"
+  "version" : "3.1.0" // 04/08/2020
 };
 
 var horario_WA = {
