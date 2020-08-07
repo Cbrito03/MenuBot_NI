@@ -194,7 +194,7 @@ var msj_default =
 var msj_fuera_horario =
 {
   "action" : {
-    "type" : "continue",
+    "type" : "transfer",
     "queue" : ""
   },
   "messages" : [
