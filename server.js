@@ -358,7 +358,7 @@ app.post('/tw/message', (req, res) => {
 						{
 							if(context.lastInteractionFinishType !== "CLIENT_TIMEOUT")
 							{
-								console.log("getStorage('clave_FB_'+conversationID) " + getStorage('clave_FB_'+conversationID));
+								console.log("getStorage('clave_TW_'+conversationID) " + getStorage('clave_TW_'+conversationID));
 
 								if(getStorage('clave_TW_'+conversationID) !== null)
 								{
@@ -522,14 +522,13 @@ app.post('/tw/message', (req, res) => {
 										//localStorage.removeItem("msj_"+conversationID);
 									}
 
-									console.log("[Brito] :: [channel] :: ", channel, " :: [opcion] :: ", opcion);
-									
-									
-									removeStorage('clave_tW_'+conversationID);
+									console.log("[Brito] :: [channel] :: ", channel, " :: [opcion] :: ", opcion);	
+
+									removeStorage('clave_TW_'+conversationID);
 									
 									if( result_action.type === "continue")
 									{
-										setStorage('clave_tW_'+conversationID, 'valor_'+conversationID);
+										setStorage('clave_TW_'+conversationID, 'valor_'+conversationID);
 									}
 
 									resultado = {
@@ -545,7 +544,7 @@ app.post('/tw/message', (req, res) => {
 								else
 								{
 									console.log('NO Hay dato TW y se crea local storage');
-									setStorage('clave_tW_'+conversationID, 'valor_'+conversationID);
+									setStorage('clave_TW_'+conversationID, 'valor_'+conversationID);
 
 									result_messages = msj_tw.msj_default.messages;
 									result_action = msj_tw.msj_default.action;
