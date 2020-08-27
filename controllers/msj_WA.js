@@ -1,3 +1,5 @@
+var local_storage = require('./local_storage.js');
+
 var colas = {
   "opcion_1" : "NI_Wa_Movil",
   "opcion_2" : "NI_Wa_Ventas",

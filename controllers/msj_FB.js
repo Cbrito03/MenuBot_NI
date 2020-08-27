@@ -18,8 +18,8 @@ var mensaje_df = "¡Hola! $cr Soy *Avi*, tu asistente virtual 🤖 de Claro $cr 
     //mensaje_df +="➡️ Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 $cr $cr ";
 
 var mjs_horario = "¡Hola, gracias por comunicarte a Claro, te informamos nuestros horarios de atención! $cr $cr $cr ";
-    mjs_horario += "Whatsapp $cr $cr ";
-    mjs_horario += "Lunes a Domingo 8:00 a 21:00 horas $cr $cr $cr ";
+    //mjs_horario += "Whatsapp $cr $cr ";
+   // mjs_horario += "Lunes a Domingo 8:00 a 21:00 horas $cr $cr $cr ";
     mjs_horario += "⌚Facebook y Twitter $cr $cr ";
     mjs_horario += "Lunes a Domingo $cr $cr ";
     mjs_horario += "7:00 a 22:00 horas $cr $cr ";
