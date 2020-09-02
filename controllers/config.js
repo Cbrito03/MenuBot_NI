@@ -8,7 +8,7 @@ var info =
 var horario_WA = {
   "OPEN_HOUR" : 8,
   "OPEN_MINUTE" : 0,
-  "CLOSE_HOUR" : 21,
+  "CLOSE_HOUR" : 23, // 21
   "CLOSE_MINUTE" : 0,
   dias : {
     "0" : ["domingo",true],
@@ -24,7 +24,7 @@ var horario_WA = {
 var horario_FB = {
   "OPEN_HOUR" : 7,
   "OPEN_MINUTE" : 0,
-  "CLOSE_HOUR" : 22,
+  "CLOSE_HOUR" : 23,//22
   "CLOSE_MINUTE" : 0,
   dias : {
     "0" : ["domingo",true],
@@ -40,7 +40,7 @@ var horario_FB = {
 var horario_TW = {
   "OPEN_HOUR" : 7,
   "OPEN_MINUTE" : 0,
-  "CLOSE_HOUR" : 22,
+  "CLOSE_HOUR" : 23,//22
   "CLOSE_MINUTE" : 0,
   dias : {
     "0" : ["domingo",true],
