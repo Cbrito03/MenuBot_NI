@@ -8,8 +8,8 @@ var local_storage = require('./local_storage.js');
 
 var colas = {
   "cotizar" : "NI_Wa_Ventas",
-  "factura" : "NI_Wa_SAC",
-  "asistencia" : "NI_Wa_SAC"
+  "factura" : "NI_Wa_Corpo",
+  "asistencia" : "NI_Wa_Movil"
 };
 
 var mjs_horario = "¡Hola, gracias por comunicarte a Claro, te informamos nuestros horarios de atención! $cr $cr $cr ";
