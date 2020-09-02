@@ -1,10 +1,10 @@
 var local_storage = require('./local_storage.js');
 
-var colas = {
+/*var colas = {
   "opcion_1" : "NI_Wa_Movil",
   "opcion_2" : "NI_Wa_Ventas",
   "opcion_3" : "NI_Wa_Corpo"
-};
+};*/
 
 var colas = {
   "cotizar" : "NI_Wa_Ventas",
