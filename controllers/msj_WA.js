@@ -63,7 +63,7 @@ var msj_opcion = {
 var msj_fuera_horario =
 {
   "action" : {
-    "type" : "transfer",
+    "type" : "end", //"transfer",
     "queue" : ""
   },
   "messages" : [
