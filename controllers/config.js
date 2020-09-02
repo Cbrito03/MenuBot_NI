@@ -10,7 +10,7 @@ var horario_WA = {
   "OPEN_MINUTE" : 0,
   "CLOSE_HOUR" : 21,
   "CLOSE_MINUTE" : 0,*/
-  "OPEN_HOUR" : 1,
+  "OPEN_HOUR" : 0,
   "OPEN_MINUTE" : 0,
   "CLOSE_HOUR" : 23,
   "CLOSE_MINUTE" : 59,
@@ -30,7 +30,7 @@ var horario_FB = {
   "OPEN_MINUTE" : 0,
   "CLOSE_HOUR" : 22,
   "CLOSE_MINUTE" : 0,*/
-  "OPEN_HOUR" : 1,
+  "OPEN_HOUR" : 0,
   "OPEN_MINUTE" : 0,
   "CLOSE_HOUR" : 23,
   "CLOSE_MINUTE" : 59,
@@ -50,7 +50,7 @@ var horario_TW = {
   "OPEN_MINUTE" : 0,
   "CLOSE_HOUR" : 23,
   "CLOSE_MINUTE" : 0,*/
-  "OPEN_HOUR" : 1,
+  "OPEN_HOUR" : 0,
   "OPEN_MINUTE" : 0,
   "CLOSE_HOUR" : 23,
   "CLOSE_MINUTE" : 59,
