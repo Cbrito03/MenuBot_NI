@@ -15,6 +15,7 @@ var horario = require('./controllers/validar_horario.js');
 var local_storage = require('./controllers/local_storage.js');
 var moment = require('moment');
 var moment_timezone = require('moment-timezone');
+const axios = require('axios');
 var port = 8080;
 
 var url_ibm = 'https://estadisticasmenubot.mybluemix.net/opcion/insert';
@@ -37,7 +38,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.post('/wa/message', (req, res) => {
+app.post('/wa/message', async (req, res) => {
 
 	console.log("[Brito] :: [Peticion POST NI /wa/message]");
 	
@@ -241,35 +242,30 @@ app.post('/wa/message', (req, res) => {
 									}
 
 									var options = {
-										'method': 'POST',
-										'url': url_ibm,
-										'headers': {
-											'Content-Type': 'application/json'
-										},
-										body: JSON.stringify(
-										{
-											"conversacion_id": conversationID,
-											"pais": config.info.pais,
-											"app": config.info.nomApp,
-											"opcion": opcion,
-											"transferencia": bandera_tranferido,
-											"fueraHorario": bandera_fueraHorario,
-											"grupoACD": result_action.queue
+										method : 'post',
+										url : url_ibm,
+										headers : { 'Content-Type': 'application/json'},
+										data: JSON.stringify({
+											"conversacion_id" : conversationID,
+											"pais" : config.info.pais,
+											"app" : config.info.nomApp,
+											"opcion" : opcion,
+											"rrss" : "WA",
+											"transferencia" : bandera_tranferido,
+											"fueraHorario" : bandera_fueraHorario,
+											"grupoACD" : result_action.queue				
 										})
-									};           
+									};            
 
 									if(bandera == true)
 									{
 										if(bandera_opt)
 										{
 											console.log(options);
-											request(options, function (error, response)
-											{ 
-												if (error) throw new Error(error);
-												console.log(response.body);
-											});
-										}
-										
+											var resultado_axios = await axios(options);
+											console.log("[Resultado AXIOS] :: ");
+											console.log(resultado_axios);
+										}										
 									}
 									else
 									{
@@ -400,7 +396,7 @@ app.post('/wa/message', (req, res) => {
 	res.status(estatus).json(resultado);
 });
 
-app.post('/tw/message', (req, res) => {
+app.post('/tw/message', async (req, res) => {
 	console.log("[Brito] :: [Peticion POST NI /tw/message]");
 	
 	var horarios = horario.validarHorario_TW();
@@ -531,37 +527,33 @@ app.post('/tw/message', (req, res) => {
 
 										result_action = msj_tw.msj_default.action;
 									}
-								}						
+								}
 
 								var options = {
-									'method': 'POST',
-									'url': url_ibm,
-									'headers': {
-										'Content-Type': 'application/json'
-									},
-									body: JSON.stringify(
-									{
-										"conversacion_id": conversationID,
-										"pais": config.info.pais,
-										"app": config.info.nomApp,
-										"opcion": opcion,
-										"transferencia": bandera_tranferido,
-										"fueraHorario": bandera_fueraHorario,
-										"grupoACD": result_action.queue
+									method : 'post',
+									url : url_ibm,
+									headers : { 'Content-Type': 'application/json'},
+									data: JSON.stringify({
+										"conversacion_id" : conversationID,
+										"pais" : config.info.pais,
+										"app" : config.info.nomApp,
+										"opcion" : opcion,
+										"rrss" : "TW",
+										"transferencia" : bandera_tranferido,
+										"fueraHorario" : bandera_fueraHorario,
+										"grupoACD" : result_action.queue				
 									})
-								};           
+								};          
 
 								if(bandera == true)
 								{
 									if(bandera_opt)
 									{
 										console.log(options);
-										request(options, function (error, response)
-										{ 
-											if (error) throw new Error(error);
-											console.log(response.body);
-										});
-									}								
+										var resultado_axios = await axios(options);
+										console.log("[Resultado AXIOS] :: ");
+										console.log(resultado_axios);
+									}									
 								}
 								//else{result = msj_dafault; localStorage.removeItem("msj_"+conversationID);}
 
@@ -648,7 +640,7 @@ app.post('/tw/message', (req, res) => {
 	res.status(estatus).json(resultado);
 });
 
-app.post('/fb/message', (req, res) => {
+app.post('/fb/message', async (req, res) => {
 
 	console.log("[Brito] :: [Peticion POST NI /fb/message]");
 	
@@ -796,36 +788,31 @@ app.post('/fb/message', (req, res) => {
 									}
 
 									var options = {
-										'method': 'POST',
-										'url': url_ibm,
-										'headers': {
-											'Content-Type': 'application/json'
-										},
-										body: JSON.stringify(
-										{
-											"conversacion_id": conversationID,
-											"pais": config.info.pais,
-											"app": config.info.nomApp,
-											"opcion": opcion,
-											"transferencia": bandera_tranferido,
-											"fueraHorario": bandera_fueraHorario,
-											"grupoACD": result_action.queue
+										method : 'post',
+										url : url_ibm,
+										headers : { 'Content-Type': 'application/json'},
+										data: JSON.stringify({
+											"conversacion_id" : conversationID,
+											"pais" : config.info.pais,
+											"app" : config.info.nomApp,
+											"opcion" : opcion,
+											"rrss" : "FB",
+											"transferencia" : bandera_tranferido,
+											"fueraHorario" : bandera_fueraHorario,
+											"grupoACD" : result_action.queue				
 										})
-									};           
+									};          
 
-									if(bandera == true)
+								if(bandera == true)
+								{
+									if(bandera_opt)
 									{
-										if(bandera_opt)
-										{
-											console.log(options);
-											request(options, function (error, response)
-											{ 
-												if (error) throw new Error(error);
-												console.log(response.body);
-											});
-										}
-										
-									}
+										console.log(options);
+										var resultado_axios = await axios(options);
+										console.log("[Resultado AXIOS] :: ");
+										console.log(resultado_axios);
+									}									
+								}
 									else
 									{
 										console.log("[Brito] :: [bandera] :: ", bandera);  

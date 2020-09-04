@@ -2,7 +2,7 @@ var info =
 {
   "pais" : "NI",
   "nomApp" : "MenuBot_NI",
-  "version" : "5.2.1"
+  "version" : "6.0.0"
 };
 
 var horario_WA = {

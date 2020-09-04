@@ -1,10 +1,29 @@
 var local_storage = require('./local_storage.js');
 
-var colas = {
+/*var colas = {
   "cotizar" : "NI_Wa_Ventas",
   "factura" : "NI_Wa_Corpo",
   "op1" : "NI_Wa_Movil",
   "op2" : "NI_Wa_Corpo"  
+};*/
+
+var colas = {
+  "cotizar" : {
+      "timeout" : 300000,
+      "acd" : "NI_Wa_Ventas"
+  },
+  "factura" : {
+      "timeout" : 180000,
+      "acd" : "NI_Wa_Corpo"
+  },
+  "op1" : {
+      "timeout" : 180000,
+      "acd" : "NI_Wa_Movil"
+  },
+  "op2" : {
+      "timeout" : 180000,
+      "acd" : "NI_Wa_Corpo"
+  }  
 };
 
 var mensaje_df = "¡Hola! $cr Soy *Avi*, tu asistente virtual 🤖 de Claro $cr ";
@@ -50,7 +69,8 @@ var palabras = {
   "cotizar": {
     "action" : {
       "type" : "transfer",
-      "queue" : colas.cotizar
+      "queue" : colas.cotizar["acd"],
+      "timeoutInactivity" : colas.cotizar["timeout"]
     },
     "messages" : [
       {
@@ -186,14 +206,16 @@ var menu_asis_asesor = {
   "1": {
     "action" : {
       "type" : "transfer",
-      "queue" : colas.op1
+      "queue" : colas.op1["acd"],
+      "timeoutInactivity" : colas.op1["timeout"]
     },
     "messages" : []
   },
   "2": {
     "action" : {
       "type" : "transfer",
-      "queue" : colas.op2
+      "queue" : colas.op2["acd"],
+      "timeoutInactivity" : colas.op2["timeout"]
     },
     "messages" : []
   }
@@ -217,7 +239,8 @@ var contenedor = {
 var msj_factura_asesor = {
   "action" : {
     "type" : "transfer",
-    "queue" : colas.factura
+    "queue" : colas.factura["acd"],
+    "timeoutInactivity" : colas.factura["timeout"]
   },
   "messages" : []
 };
