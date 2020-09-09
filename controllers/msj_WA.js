@@ -9,19 +9,19 @@ var local_storage = require('./local_storage.js');
 
 var colas = {
   "cotizar" : {
-      "timeout" : 300000,
+      "timeout" : 300000, // 5 minutos
       "acd" : "NI_Wa_Ventas"
   },
   "factura" : {
-      "timeout" : 180000,
+      "timeout" : 300000,
       "acd" : "NI_Wa_Corpo"
   },
   "op1" : {
-      "timeout" : 180000,
+      "timeout" : 300000,
       "acd" : "NI_Wa_Movil"
   },
   "op2" : {
-      "timeout" : 180000,
+      "timeout" : 300000,
       "acd" : "NI_Wa_Corpo"
   }  
 };
