@@ -1,6 +1,12 @@
 var colas = {
-  "1" : "NI_TW_DM_Ventas",
-  "2" : "NI_TW_DM_SAC"
+	"1" : {
+		"acd" : "NI_TW_DM_Ventas",
+		"fh" : "NI_TW_DM_Ventas_FueraH"
+	},
+	"2" : {
+		"acd" : "NI_TW_DM_SAC",
+		"fh" : "NI_TW_DM_SAC_FueraH"
+	}
 };
 
 var mensaje_df = "¡Hola! $cr Soy *Avi*, tu asistente virtual 🤖 de Claro, ";
@@ -8,7 +14,6 @@ var mensaje_df = "¡Hola! $cr Soy *Avi*, tu asistente virtual 🤖 de Claro, ";
 	mensaje_df +="Ingresa el número de la opción con la que necesitas apoyo.  $cr $cr ";
 	mensaje_df +="1. Ventas y Renovaciones $cr ";
 	mensaje_df +="2. Servicio al Cliente $cr ";
-
 
 var mjs_horario = "¡Hola, gracias por comunicarte a Claro, te informamos nuestros horarios de atención! $cr $cr $cr ";
     mjs_horario += "⌚Facebook y Twitter $cr $cr ";
@@ -35,14 +40,14 @@ var msj_opcion = {
 	"opcion_1" : {
 		"action" : {
 			"type" : "transfer",
-			"queue" : colas["1"]
+			"queue" : colas["1"].acd
 		},
 		"messages" : []
 	},
 	"opcion_2" : {
 		"action" : {
 			"type" : "transfer",
-			"queue" : colas["2"]
+			"queue" : colas["2"].acd
 		},
 		"messages" : []
 	}

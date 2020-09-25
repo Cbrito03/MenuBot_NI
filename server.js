@@ -56,6 +56,21 @@ app.post('/wa/message', async (req, res) => {
 	var context = req.body.context;
 	var cadena = req.body.message;
 
+	var msj_fuera_horario =
+	{
+	  "action" : {
+	    "type" : "transfer",
+	    "queue" : ""
+	  },
+	  "messages" : [
+	    {
+	      "type" : "text",
+	      "text" :  msj_wa.mjs_horario,
+	      "mediaURL" : ""
+	    }
+	  ]
+	};
+
 	if(apiVersion !== '' && typeof apiVersion !== "undefined") 
 	{
 		if(authToken !== '' && typeof authToken !== "undefined") 
@@ -115,8 +130,10 @@ app.post('/wa/message', async (req, res) => {
 													{	
 														console.log("[Brito] :: [No cumple horario] :: [horarios] :: "+horarios);												
 														
-														result_messages = msj_wa.msj_fuera_horario.messages;
-														result_action = msj_wa.msj_fuera_horario.action;
+														msj_fuera_horario["action"].queue = msj_wa.colas[atr].fh;
+
+														result_messages = msj_fuera_horario.messages;
+														result_action = msj_fuera_horario.action;
 														bandera_fueraHorario = true;				                        				                        
 													}
 												}
@@ -177,8 +194,10 @@ app.post('/wa/message', async (req, res) => {
 											else
 											{	
 												console.log("[Brito] :: [No cumple horario Factura] :: [horarios] :: "+horarios);			                        
-												result_messages = msj_wa.msj_fuera_horario.messages;
-												result_action = msj_wa.msj_fuera_horario.action;
+												msj_fuera_horario["action"].queue = msj_wa.colas[msj_storage].fh;
+
+												result_messages = msj_fuera_horario.messages;
+												result_action = msj_fuera_horario.action;
 												bandera_fueraHorario = true;				                        				                        
 											}
 
@@ -199,9 +218,10 @@ app.post('/wa/message', async (req, res) => {
 											}
 											else
 											{	
-												console.log("[Brito] :: [No cumple horario Factura] :: [horarios] :: "+horarios);			                        
-												result_messages = msj_wa.msj_fuera_horario.messages;
-												result_action = msj_wa.msj_fuera_horario.action;
+												console.log("[Brito] :: [No cumple horario Factura] :: [horarios] :: "+horarios);
+												msj_fuera_horario["action"].queue = msj_wa.colas["op1"].fh;		                        
+												result_messages = msj_fuera_horario.messages;
+												result_action = msj_fuera_horario.action;
 												bandera_fueraHorario = true;				                        				                        
 											}
 
@@ -222,9 +242,10 @@ app.post('/wa/message', async (req, res) => {
 											}
 											else
 											{	
-												console.log("[Brito] :: [No cumple horario Factura] :: [horarios] :: "+horarios);			                        
-												result_messages = msj_wa.msj_fuera_horario.messages;
-												result_action = msj_wa.msj_fuera_horario.action;
+												console.log("[Brito] :: [No cumple horario Factura] :: [horarios] :: "+horarios);
+												msj_fuera_horario["action"].queue = msj_wa.colas["op2"].fh;                        
+												result_messages = msj_fuera_horario.messages;
+												result_action = msj_fuera_horario.action;
 												bandera_fueraHorario = true;				                        				                        
 											}
 
@@ -414,6 +435,21 @@ app.post('/tw/message', async (req, res) => {
 	var context = req.body.context;
 	var cadena = req.body.message;
 
+	var msj_fuera_horario =
+	{
+	  "action" : {
+	    "type" : "transfer",
+	    "queue" : ""
+	  },
+	  "messages" : [
+	    {
+	      "type" : "text",
+	      "text" :  msj_tw.mjs_horario,
+	      "mediaURL" : ""
+	    }
+	  ]
+	};
+
 	if(apiVersion !== '' && typeof apiVersion !== "undefined") 
 	{
 		if(authToken !== '' && typeof authToken !== "undefined") 
@@ -476,10 +512,12 @@ app.post('/tw/message', async (req, res) => {
 											console.log("[Brito] :: [No cumple horario] :: [horarios] :: "+horarios);
 
 											localStorage.removeItem("msj_"+conversationID);
-											
-											result_messages = msj_tw.msj_fuera_horario.messages;
 
-											result_action = msj_tw.msj_fuera_horario.action;
+											msj_fuera_horario["action"].queue = msj_tw.colas["1"].fh;
+											
+											result_messages = msj_fuera_horario.messages;
+
+											result_action = msj_fuera_horario.action;
 
 											bandera_fueraHorario = true;				                        				                        
 										}
@@ -508,10 +546,12 @@ app.post('/tw/message', async (req, res) => {
 											console.log("[Brito] :: [No cumple horario] :: [horarios] :: "+horarios);
 
 											localStorage.removeItem("msj_"+conversationID);
-											
-											result_messages = msj_tw.msj_fuera_horario.messages;
 
-											result_action = msj_tw.msj_fuera_horario.action;
+											msj_fuera_horario["action"].queue = msj_tw.colas["2"].fh;
+											
+											result_messages = msj_fuera_horario.messages;
+
+											result_action = msj_fuera_horario.action;
 
 											bandera_fueraHorario = true;				                        				                        
 										}
@@ -658,6 +698,21 @@ app.post('/fb/message', async (req, res) => {
 	var context = req.body.context;
 	var cadena = req.body.message;
 
+	var msj_fuera_horario =
+	{
+	  "action" : {
+	    "type" : "transfer",
+	    "queue" : ""
+	  },
+	  "messages" : [
+	    {
+	      "type" : "text",
+	      "text" :  msj_fb.mjs_horario,
+	      "mediaURL" : ""
+	    }
+	  ]
+	};
+
 	if(apiVersion !== '' && typeof apiVersion !== "undefined") 
 	{
 		if(authToken !== '' && typeof authToken !== "undefined") 
@@ -711,9 +766,9 @@ app.post('/fb/message', async (req, res) => {
 													else
 													{	
 														console.log("[Brito] :: [No cumple horario] :: [horarios] :: "+horarios);												
-														
-														result_messages = msj_fb.msj_fuera_horario.messages;
-														result_action = msj_fb.msj_fuera_horario.action;
+														msj_fuera_horario["action"].queue = msj_fb.colas[atr].fh;
+														result_messages = msj_fuera_horario.messages;
+														result_action = msj_fuera_horario.action;
 														bandera_fueraHorario = true;				                        				                        
 													}
 												}
@@ -768,9 +823,10 @@ app.post('/fb/message', async (req, res) => {
 											}
 											else
 											{	
-												console.log("[Brito] :: [No cumple horario Factura] :: [horarios] :: "+horarios);			                        
-												result_messages = msj_fb.msj_fuera_horario.messages;
-												result_action = msj_fb.msj_fuera_horario.action;
+												console.log("[Brito] :: [No cumple horario Factura] :: [horarios] :: "+horarios);
+												msj_fuera_horario["action"].queue = msj_fb.colas[msj_storage].fh;			                        
+												result_messages = msj_fuera_horario.messages;
+												result_action = msj_fuera_horario.action;
 												bandera_fueraHorario = true;				                        				                        
 											}
 
