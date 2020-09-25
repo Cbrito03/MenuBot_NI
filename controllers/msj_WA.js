@@ -23,7 +23,7 @@ var colas = {
   }  
 };
 
-var mensaje_df = "¡Hola! $cr Soy -Avi*, tu asistente virtual 🤖 de Claro $cr ";
+var mensaje_df = "¡Hola! $cr Soy *Avi*, tu asistente virtual 🤖 de Claro $cr ";
     mensaje_df +="¡Este es el nuevo menú de opciones con las que te puedo apoyar más rápido!  Solo envía una de las palabras que aparecen resaltadas según tu consulta. $cr $cr ";
     mensaje_df +="➡️ Envía ASISTENCIA si presentas inconvenientes con tu servicios móvil 📱, línea , Internet residencial o televisión claro  🖥. $cr $cr ";
     mensaje_df +="➡️ Envía COTIZAR para conocer nuestros planes móviles y residenciales si deseas renovar o contratar nuevos servicios. 😎  😎 $cr $cr ";
