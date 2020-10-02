@@ -59,7 +59,7 @@ app.post('/wa/message', async (req, res) => {
 	var msj_fuera_horario =
 	{
 	  "action" : {
-	    "type" : "transfer",
+	    "type" : "end",
 	    "queue" : ""
 	  },
 	  "messages" : [
