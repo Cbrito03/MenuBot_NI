@@ -9,17 +9,17 @@ var colas = {
 	}
 };
 
-var mensaje_df = "¡Hola! $cr Soy *Avi*, tu asistente virtual 🤖 de Claro, ";
-	mensaje_df +="¡Échale un vistazo a mi nuevo menú de opciones con las que te puedo apoyar más rápido!  $cr $cr ";
-	mensaje_df +="Ingresa el número de la opción con la que necesitas apoyo.  $cr $cr ";
-	mensaje_df +="1. Ventas y Renovaciones $cr ";
-	mensaje_df +="2. Servicio al Cliente $cr ";
+var mensaje_df = "¡Hola! \n Soy *Avi*, tu asistente virtual 🤖 de Claro, ";
+	mensaje_df +="¡Échale un vistazo a mi nuevo menú de opciones con las que te puedo apoyar más rápido!  \n \n ";
+	mensaje_df +="Ingresa el número de la opción con la que necesitas apoyo.  \n \n ";
+	mensaje_df +="1. Ventas y Renovaciones \n ";
+	mensaje_df +="2. Servicio al Cliente \n ";
 
-var mjs_horario = "¡Hola, gracias por comunicarte a Claro, te informamos nuestros horarios de atención! $cr $cr $cr ";
-    mjs_horario += "⌚Facebook y Twitter $cr $cr ";
-    mjs_horario += "Lunes a Domingo $cr $cr ";
-    mjs_horario += "7:00 a 22:00 horas $cr $cr ";
-    mjs_horario += "Te invitamos a ingresar a https://miclaro.com.ni/ disponible 24/7 para que puedas hacer tus autogestiones. $cr $cr ";
+var mjs_horario = "¡Hola, gracias por comunicarte a Claro, te informamos nuestros horarios de atención! \n \n \n ";
+    mjs_horario += "⌚Facebook y Twitter \n \n ";
+    mjs_horario += "Lunes a Domingo \n \n ";
+    mjs_horario += "7:00 a 22:00 horas \n \n ";
+    mjs_horario += "Te invitamos a ingresar a https://miclaro.com.ni/ disponible 24/7 para que puedas hacer tus autogestiones. \n \n ";
     mjs_horario += "¡Claro que sí! ";
     
 var contenedor = {
