@@ -2,8 +2,12 @@ var info =
 {
   "pais" : "NI",
   "nomApp" : "MenuBot_NI",
-  "version" : "7.1.0"
+  "version" : "8.0.0"
 };
+
+var url_estd = 'https://estadisticasmenubot.mybluemix.net/opcion/insert';
+
+var puerto = 8080;
 
 var horario_WA = {
   "OPEN_HOUR" : 8,
@@ -57,3 +61,5 @@ exports.horario_WA = horario_WA;
 exports.horario_FB = horario_FB;
 exports.horario_TW = horario_TW;
 exports.info = info;
+exports.puerto = puerto;
+exports.url_estd = url_estd;
