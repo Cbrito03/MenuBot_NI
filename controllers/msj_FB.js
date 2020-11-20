@@ -1,13 +1,16 @@
 var colas = {
-  "cotizar" : { // 5 minutos
+  "cotizar" : {
+      "timeout" : 900000, // 15 min
       "acd" : "NI_FB_MSS_Ventas",
       "fh" : "NI_FB_MSS_Ventas"
   },
   "factura" : {
+      "timeout" : 900000, // 15 min
       "acd" : "NI_FB_MSS_SAC",
       "fh" : "NI_FB_MSS_SAC"
   },
   "asistencia" : {
+      "timeout" : 900000, // 15 min
       "acd" : "NI_FB_MSS_SAC",
       "fh" : "NI_FB_MSS_SAC"
   }
@@ -52,7 +55,8 @@ var palabras = {
   "cotizar": {
     "action" : {
       "type" : "transfer",
-      "queue" : colas.cotizar["acd"]
+      "queue" : colas.cotizar["acd"],
+      "timeoutInactivity" : colas.cotizar["timeout"]
     },
     "messages" : [
       {
@@ -91,7 +95,8 @@ var palabras = {
   "asistencia": {
    "action" : {
       "type" : "transfer",
-      "queue" : colas.asistencia["acd"]
+      "queue" : colas.asistencia["acd"],
+      "timeoutInactivity" : colas.asistencia["timeout"]
     },
     "messages" : []
   },
@@ -181,7 +186,8 @@ var contenedor = {
 var msj_factura_asesor = {
   "action" : {
     "type" : "transfer",
-    "queue" : colas.factura["acd"]
+    "queue" : colas.factura["acd"],
+    "timeoutInactivity" : colas.factura["timeout"]
   },
   "messages" : []
 };

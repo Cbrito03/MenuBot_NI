@@ -1,9 +1,11 @@
 var colas = {
 	"1" : {
+		"timeout" : 900000, // 15 min
 		"acd" : "NI_TW_DM_Ventas",
 		"fh" : "NI_TW_DM_Ventas"
 	},
 	"2" : {
+		"timeout" : 900000, // 15 min
 		"acd" : "NI_TW_DM_SAC",
 		"fh" : "NI_TW_DM_SAC"
 	}
@@ -40,14 +42,16 @@ var msj_opcion = {
 	"opcion_1" : {
 		"action" : {
 			"type" : "transfer",
-			"queue" : colas["1"].acd
+			"queue" : colas["1"].acd,
+    		"timeoutInactivity" : colas["1"].timeout
 		},
 		"messages" : []
 	},
 	"opcion_2" : {
 		"action" : {
 			"type" : "transfer",
-			"queue" : colas["2"].acd
+			"queue" : colas["2"].acd,
+    		"timeoutInactivity" : colas["2"].timeout
 		},
 		"messages" : []
 	}
