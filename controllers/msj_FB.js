@@ -1,15 +1,15 @@
 var colas = {
   "cotizar" : { // 5 minutos
       "acd" : "NI_FB_MSS_Ventas",
-      "fh" : "NI_FB_MSS_Ventas_FueraH"
+      "fh" : "NI_FB_MSS_Ventas"
   },
   "factura" : {
       "acd" : "NI_FB_MSS_SAC",
-      "fh" : "NI_FB_MSS_SAC_FueraH"
+      "fh" : "NI_FB_MSS_SAC"
   },
   "asistencia" : {
       "acd" : "NI_FB_MSS_SAC",
-      "fh" : "NI_FB_MSS_SAC_FueraH"
+      "fh" : "NI_FB_MSS_SAC"
   }
 };
 

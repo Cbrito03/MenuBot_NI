@@ -2,24 +2,24 @@ var local_storage = require('./local_storage.js');
 
 var colas = {
   "cotizar" : {
-      "timeout" : 300000, // 5 minutos
+      "timeout" : 900000,// 15 min - 300000, // 5 minutos
       "acd" : "NI_Wa_Ventas",
-      "fh" : "NI_Wa_Ventas_FueraH"
+      "fh" : "NI_Wa_Ventas"
   },
   "factura" : {
-      "timeout" : 300000,
+      "timeout" : 900000,// 15 min - 300000,
       "acd" : "NI_Wa_Corpo",
-      "fh" : "NI_Wa_Corpo_FueraH"
+      "fh" : "NI_Wa_Corpo"
   },
   "op1" : {
-      "timeout" : 300000,
+      "timeout" : 900000,// 15 min - 300000,
       "acd" : "NI_Wa_Movil",
-      "fh" : "NI_Wa_Movil_FueraH"
+      "fh" : "NI_Wa_Movil"
   },
   "op2" : {
-      "timeout" : 300000,
+      "timeout" : 900000,// 15 min - 300000,
       "acd" : "NI_Wa_Corpo",
-      "fh" : "NI_Wa_Corpo_FueraH"
+      "fh" : "NI_Wa_Corpo"
   }  
 };
 
@@ -260,7 +260,7 @@ var msj_default =
 var msj_fuera_horario =
 {
   "action" : {
-    "type" : "transfer", // "transfer",
+    "type" : "end",
     "queue" : ""
   },
   "messages" : [

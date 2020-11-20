@@ -1,11 +1,11 @@
 var colas = {
 	"1" : {
 		"acd" : "NI_TW_DM_Ventas",
-		"fh" : "NI_TW_DM_Ventas_FueraH"
+		"fh" : "NI_TW_DM_Ventas"
 	},
 	"2" : {
 		"acd" : "NI_TW_DM_SAC",
-		"fh" : "NI_TW_DM_SAC_FueraH"
+		"fh" : "NI_TW_DM_SAC"
 	}
 };
 
