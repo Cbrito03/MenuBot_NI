@@ -23,17 +23,7 @@ var colas = {
   }  
 };
 
-var mensaje_df = "¡Hola! \n Soy *Avi*, tu asistente virtual 🤖 de Claro \n ";
-    mensaje_df +="¡Este es el nuevo menú de opciones con las que te puedo apoyar más rápido!  Solo envía una de las palabras que aparecen resaltadas según tu consulta. \n \n ";
-    mensaje_df +="➡️ Envía ASISTENCIA si presentas inconvenientes con tu servicios móvil 📱, línea , Internet residencial o televisión claro  🖥. \n \n ";
-    mensaje_df +="➡️ Envía COTIZAR para conocer nuestros planes móviles y residenciales si deseas renovar o contratar nuevos servicios. 😎  😎 \n \n ";
-    mensaje_df +="➡️ Envía FACTURA para conocer el detalle de tu factura, monto y fecha de vencimiento.  📥 \n \n ";
-    mensaje_df +="➡️ Envía AYUDA para conocer todo lo que puedes hacer en un mismo lugar. ¡Puedes consultar tu saldo, tus paquetes contratados, tu consumo de internet móvil y mucho más!  😎 \n \n ";
-    mensaje_df +="➡️ Envía PAGAR para ver el saldo, fecha de vencimiento y pagar tu factura móvil y residencial. 💳 \n \n ";
-    mensaje_df +="➡️ Envía RECARGA para hacer una recarga.  \n \n ";
-    mensaje_df +="➡️ Envía PAQUETE para compra de paquete. \n \n ";
-    mensaje_df +="➡️ Envía CLUB para conocer los establecimientos con promociones especiales solo por ser cliente Claro. 😎 💰  \n \n ";
-    //mensaje_df +="➡️ Envía *asesor* si aún deseas ser atendido por uno de nuestros agentes de servicio al cliente o ventas. 👩💻👨💻 \n \n ";
+var mensaje_df = "Nuestro número de WhatsApp ha cambiado, ahora puedes contactarnos ingresando aquí 👉 https://bit.ly/WhatsAppClaroNI. ¡Claro que sí!";
 
 var mjs_horario = "¡Hola, gracias por comunicarte a Claro, te informamos nuestros horarios de atención! \n \n \n ";
     mjs_horario += "Whatsapp \n \n ";
@@ -245,7 +235,7 @@ var msj_factura_asesor = {
 var msj_default = 
 {
   "action" : {
-    "type" : "continue",
+    "type" : "end",
     "queue" : ""
   },
   "messages" : [
